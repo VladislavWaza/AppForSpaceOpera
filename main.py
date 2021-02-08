@@ -9,11 +9,10 @@ class MyWidget(QMainWindow):
         super().__init__()
         uic.loadUi('main.ui', self)  # Загружаем дизайн
         self.pushButton.clicked.connect(self.run)
-        # Обратите внимание: имя элемента такое же как в QTDesigner
 
     def run(self):
-        self.label.setText("OK")
-        self.tabWidget.addTab(QLabel("Содержимое вкладки 1"), "тыкни сюды")
+        self.label.setText(self.textEdit.toPlainText())  # текст читаем
+        self.tabWidget.addTab(QLabel("кто прочитал тот здохнет"), "тыкни сюды")
 
 
 
